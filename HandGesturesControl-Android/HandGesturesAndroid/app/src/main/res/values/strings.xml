@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hand Gestures Control</string>
+    <string name="a11y_desc">بتخلّي التطبيق ينفّذ لمسات وسحبات وأوامر النظام (رجوع، الرئيسية، التمرير…) بدل إيدك، بناءً على حركات إيدك قدام الكاميرا. مفيش أي بيانات بتتبعت لأي مكان.</string>
+</resources>
