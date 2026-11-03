@@ -3,6 +3,9 @@ on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
+defaults:
+  run:
+    working-directory: HandGesturesControl-Android/HandGesturesAndroid
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +18,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: "8.7"
-      - name: Download MediaPipe hand model (bundled into the APK, works offline)
+      - name: Download MediaPipe hand model
         run: |
           mkdir -p app/src/main/assets
           curl -L --fail -o app/src/main/assets/hand_landmarker.task \
@@ -26,4 +29,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: HandGesturesControl-apk
-          path: app/build/outputs/apk/debug/*.apk
+          path: HandGesturesControl-Android/HandGesturesAndroid/app/build/outputs/apk/debug/*.apk
